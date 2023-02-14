@@ -19,7 +19,8 @@
                     "zendesk_jwt_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImtpZCI6ImFwcF82MmFmZDYxN2Y1ZjQ4MDAwZWYyMDY1ODIifQ.eyJleHRlcm5hbF9pZCI6IjUxMDAzNzIrOCIsInNjb3BlIjoidXNlciIsIm5hbWUiOiJZZWxsb3cgQUkgfCA1MTAwMzcyKzgiLCJlbWFpbCI6ImhjdGVzdDA1QG1haWwuY29tIiwiaWF0IjoxNjcwOTg2MTQ5fQ.zYb7NSNPdgSKPEA924TVEFEN-agVRkfdb9d8UiYAj24",
                     "flip_jwt_token": "",
                     "user_id_flip": "",
-                }
+                },
+                setDisableActionsTimeout: true
             }; (function () { var w = window, ic = w.YellowMessenger; if ("function" === typeof ic) ic("reattach_activator"), ic("update", ymConfig); else { var d = document, i = function () { i.c(arguments) }; function l() { var e = d.createElement("script"); e.type = "text/javascript", e.async = !0, e.src = "https://cdn.yellowmessenger.com/plugin/widget-v2/latest/dist/main.min.js"; var t = d.getElementsByTagName("script")[0]; t.parentNode.insertBefore(e, t) } i.q = [], i.c = function (e) { i.q.push(e) }, w.YellowMessenger = i, w.attachEvent ? w.attachEvent("onload", l) : w.addEventListener("load", l, !1) } })();
 
             window.addEventListener('message', function (eventData) {
@@ -37,9 +38,10 @@
             })
             function reloadBot() {
                 window.YellowMessengerPlugin.init(
-                    //     {
-                    //     ymAuthenticationToken: 'eGrianoABC123'
-                    // }
+                         {
+                    //     ymAuthenticationToken: 'eGrianoABC123',
+                           setDisableActionsTimeout: true
+                     }
                 );
                 setTimeout(() => {
                     document.getElementById("ymDivBar").style.display = "none"
@@ -49,11 +51,12 @@
         }
         runChatbot()
         // setTimeout(() => {
-        //     // window.YellowMessengerPlugin.init({
-        //     //     ymAuthenticationToken: 'eGrianoABC123'
-        //     // });
-        //     window.YellowMessengerPlugin.openBot()
-        // }, 1000)
+              window.YellowMessengerPlugin.init({
+             //     ymAuthenticationToken: 'eGrianoABC123',
+                  setDisableActionsTimeout: true
+              });
+             window.YellowMessengerPlugin.openBot()
+         }, 1000)
     </script>
 </body>
 
